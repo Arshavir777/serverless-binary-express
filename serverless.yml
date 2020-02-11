@@ -1,0 +1,31 @@
+service: binary-express
+plugins:
+  - serverless-apigw-binary
+  - serverless-offline
+provider:
+  name: aws
+  runtime: nodejs12.x
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+        - "s3:*"
+      Resource: { "Fn::Join": ["", ["arn:aws:s3:::", { "Ref": "ServerlessDeploymentBucket" } ] ]  }
+
+custom:
+  apigwBinary:
+    types:
+      - '*/*'
+      -
+functions:
+  api:
+    handler: lambda.express
+    environment:
+      AWS_API_KEY: '******'
+      AWS_API_SECRET: '***********'
+      AWS_BUCKET: 'devopstest-2020-02-11'
+      MAIL: ''
+      IMAGE_WIDTH: 400
+      IMAGE_HEIGHT: 225
+    events:
+      - http: ANY {proxy+}
+      - http: ANY /

@@ -1,0 +1,51 @@
+{
+  "name": "serverless-apigw-binary-example",
+  "version": "1.0.0",
+  "description": "Example of binary support plugin",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run server",
+    "server": "nodemon local.js",
+    "deploy": "serverless deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maciejtreder/serverless-apigw-binary.git"
+  },
+  "keywords": [
+    "serverless",
+    "serverless-plugin",
+    "amazon",
+    "binary",
+    "types",
+    "support",
+    "gateway",
+    "aws",
+    "lambda"
+  ],
+  "author": "Maciej Treder <contact@maciejtreder.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/maciejtreder/serverless-apigw-binary/issues"
+  },
+  "homepage": "https://github.com/maciejtreder/serverless-apigw-binary#readme",
+  "engines": {
+    "node": ">=4.0"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.615.0",
+    "aws-serverless-express": "^3.0.0",
+    "express": "^4.15.2",
+    "multer": "^1.4.2",
+    "multiparty": "^4.2.1",
+    "parse-multipart": "^1.0.4",
+    "serverless-apigw-binary": "^0.4.0",
+    "serverless-http": "^2.3.1",
+    "serverless-offline": "^5.12.1",
+    "sharp": "^0.24.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0",
+    "serverless": "~1.26.1"
+  }
+}
