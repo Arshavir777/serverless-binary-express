@@ -1,5 +1,5 @@
 const awsServerlessExpress = require('aws-serverless-express');
-const app = require('./dist/app');
+const app = require('./src/app');
 const binaryMimeTypes = [
   'image/gif',
   'text/css',
